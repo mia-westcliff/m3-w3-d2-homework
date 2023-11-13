@@ -1,52 +1,62 @@
+@import 'colors.scss';
 
+@mixin center-absolutely {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-//Global
+// Global 
 * {
-    color: ;
-    font-size: 1.2rem;
+  box-sizing: border-box;
+  color: $border-color;
+  font-size: 1.2rem;
 }
 
 .container {
-    background-color: ;
-    border: 1px solid #000;
-    display: flex;
-    height: 500px;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 1em;
-    width: 50%;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  display: flex;
+  height: 500px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1em;
+  width: 50%;
 
-    .left {
-        background-color: ;
-        height: 100%;
-        width: 69%;
-        position: relative;
+  .left, .right {
+    position: relative;
+    height: 100%;
+
+    p {
+      @include center-absolutely;
     }
+  }
 
-    .right {
-        background-color: ;
-        height: 100%;
-        position: relative;
-        width: 29%;
+  .left {
+    background-color: $primary-color;
+    width: 69%;
+  }
 
-        .button {
-            background-color: ;
-            color: ;
-            border: 0;
-            border-radius: 10px;
-            cursor: pointer;
-            width: 7em;
-            height: 2.5em;
-            font-size: 1rem;
-            font-weight: bold;
-            padding: 0.5em 2em;
+  .right {
+    background-color: $secondary-color;
+    width: 29%;
 
-            //this is to center content vertically
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translate(-50%, -120%);
-        }
+    .button {
+      background-color: $button-background-color;
+      color: $button-text-color;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 7em;
+      height: 2.5em;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.5em 2em;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-
+  }
 }
